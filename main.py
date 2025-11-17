@@ -31,3 +31,62 @@ df["Happiness_Standardized"] = scaler.fit_transform(
 )
 
 print(df)
+
+# ============================================================
+# CORRELATION BETWEEN SCREEN TIME & HAPPINESS
+# ============================================================
+
+corr = df["Daily_Screen_Time(hrs)"].corr(df["Happiness_Index(1-10)"])
+print("Correlation between Screen Time and Happiness:", corr)
+# negative correlation means more screen time -> less happiness
+
+# ============================================================
+# SCATTERPLOT: SCREEN TIME VS HAPPINESS
+# ============================================================
+
+plt.figure(figsize=(8,6))
+sns.scatterplot(
+    x="Daily_Screen_Time(hrs)", 
+    y="Happiness_Index(1-10)", 
+    data=df,
+    hue="Happiness_Group",
+    palette="viridis"
+)
+plt.title("Screen Time vs Happiness Index")
+plt.xlabel("Daily Screen Time (hrs)")
+plt.ylabel("Happiness Index")
+plt.show()
+
+# ============================================================
+# REGRESSION LINE (LINEAR TREND)
+# ============================================================
+
+plt.figure(figsize=(8,6))
+sns.regplot(
+    x="Daily_Screen_Time(hrs)",
+    y="Happiness_Index(1-10)",
+    data=df,
+    scatter_kws={'alpha':0.5},
+    line_kws={'color':'red'}
+)
+plt.title("Screen Time vs Happiness with Linear Trend")
+plt.show()
+
+# more screen time generally reduces happiness
+
+# ============================================================
+# RELATIONSHIP WITH STANDARDIZED HAPPINESS
+# ============================================================
+
+plt.figure(figsize=(8,6))
+sns.regplot(
+    x="Daily_Screen_Time(hrs)",
+    y="Happiness_Standardized",
+    data=df,
+    scatter_kws={'alpha':0.5},
+    line_kws={'color':'red'}
+)
+plt.title("Screen Time vs Standardized Happiness")
+plt.xlabel("Daily Screen Time (hrs)")
+plt.ylabel("Happiness (Standardized)")
+plt.show()
