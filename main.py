@@ -1,9 +1,25 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
+
 
 df = pd.read_csv('Mental_Health_and_Social_Media_Balance_Dataset.csv')
-print(df.head())
 
-df.hist(figsize=(10,8), bins=20)
-plt.suptitle("Distributions of Numeric Features", fontsize=14)
-plt.show()
+df.hist(figsize=(12,10), bins=20)
+plt.suptitle("Distribution of All Numeric Features", fontsize=16)
+# plt.show()
+
+# Function to classify happiness levels
+def categorize_happiness(h):
+    if 4 <= h < 6:
+        return "Low"
+    elif 6 <= h < 8:
+        return "Medium"
+    elif 8 <= h <= 10:
+        return "High"
+    else:
+        return None  # for values outside expected range
+
+# Create the new column
+df["Happiness_Group"] = df["Happiness_Index(1-10)"].apply(categorize_happiness)
+print(df)
