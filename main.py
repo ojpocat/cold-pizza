@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+from sklearn.preprocessing import StandardScaler
+
 
 
 df = pd.read_csv('Mental_Health_and_Social_Media_Balance_Dataset.csv')
@@ -22,4 +24,10 @@ def categorize_happiness(h):
 
 # Create the new column
 df["Happiness_Group"] = df["Happiness_Index(1-10)"].apply(categorize_happiness)
+
+scaler = StandardScaler()
+df["Happiness_Standardized"] = scaler.fit_transform(
+    df[["Happiness_Index(1-10)"]]
+)
+
 print(df)
