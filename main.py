@@ -8,7 +8,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
-
 df = pd.read_csv('Mental_Health_and_Social_Media_Balance_Dataset.csv')
 
 # ============================================================
@@ -92,10 +91,7 @@ plt.xlabel("Daily Screen Time (hrs)")
 plt.ylabel("Happiness (Standardized)")
 plt.show()
 
-# ============================================================
-# CLUSTERING: SCREEN-TIME LIFESTYLE GROUPS
-# ============================================================
-
+# Features for clustering
 features = [
     "Daily_Screen_Time(hrs)",
     "Sleep_Quality(1-10)",
@@ -105,13 +101,17 @@ features = [
 ]
 
 # Standardize features
-X = StandardScaler().fit_transform(df[features])
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(df[features])
 
-# KMeans clustering
+# KMeans clustering (3 clusters)
 kmeans = KMeans(n_clusters=3, random_state=42)
-df["Cluster"] = kmeans.fit_predict(X)
+df["Cluster"] = kmeans.fit_predict(X_scaled)
 
-# Cluster visualization using screen time vs happiness
+# ============================================================
+# CLUSTERS
+# ============================================================
+
 plt.figure(figsize=(8,6))
 sns.scatterplot(
     x="Daily_Screen_Time(hrs)",
@@ -121,33 +121,42 @@ sns.scatterplot(
     data=df
 )
 plt.title("Clusters Based on Screen-Time Lifestyle Features")
+plt.xlabel("Daily Screen Time (hrs)")
+plt.ylabel("Happiness Index")
 plt.show()
 
-# Examine cluster means
-df.groupby("Cluster")[features + ["Happiness_Index(1-10)"]].mean()
+# EXAMINE CLUSTER MEANS
 
-# ============================================================
-# REGRESSION MODELING: PREDICTING HAPPINESS
-# ============================================================
+cluster_summary = df.groupby("Cluster")[features + ["Happiness_Index(1-10)"]].mean()
+cluster_summary["Count"] = df.groupby("Cluster").size()
+print("Cluster Summary:\n")
+print(cluster_summary)
 
-# Features & target
-X = df[features]
-y = df["Happiness_Index(1-10)"]
+# INTERPRET CLUSTERS
 
-# Train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Function to assign descriptive labels based on observed means
+def describe_cluster(row):
+    if row["Daily_Screen_Time(hrs)"] > df["Daily_Screen_Time(hrs)"].mean() and \
+       row["Sleep_Quality(1-10)"] < df["Sleep_Quality(1-10)"].mean():
+        return "High Screen Time / Poor Sleep"
+    elif row["Exercise_Frequency(week)"] > df["Exercise_Frequency(week)"].mean() and \
+         row["Stress_Level(1-10)"] < df["Stress_Level(1-10)"].mean():
+        return "Healthy Lifestyle"
+    else:
+        return "Moderate Screen Time / Mixed Wellness"
 
-# Random Forest Regressor
-model = RandomForestRegressor(n_estimators=100, random_state=42)
-model.fit(X_train, y_train)
+cluster_summary["Description"] = cluster_summary.apply(describe_cluster, axis=1)
+print("\nCluster Descriptions:\n")
+print(cluster_summary[["Description", "Count"]])
 
-# Predictions & metrics
-y_pred = model.predict(X_test)
-rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-r2 = r2_score(y_test, y_pred)
+# ADD CLUSTER DESCRIPTION TO DATAFRAME
 
-print(f"RMSE: {rmse:.2f}")
-print(f"R²: {r2:.2f}")
+# Map cluster numbers to descriptive labels
+cluster_map = cluster_summary["Description"].to_dict()
+df["Cluster_Description"] = df["Cluster"].map(cluster_map)
+
+# Quick check
+df[["User_ID", "Cluster", "Cluster_Description", "Happiness_Index(1-10)", "Daily_Screen_Time(hrs)"]].head()
 
 # ============================================================
 # PLATFORM-BASED SCREEN TIME ANALYSIS
