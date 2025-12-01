@@ -39,11 +39,11 @@ print(df.describe())
 # ============================================================
 
 def categorize_happiness(h):
-    if 4 <= h < 6:
+    if 4 <= h < 8:
         return "Low"
-    elif 6 <= h < 8:
+    elif 8 <= h < 10:
         return "Medium"
-    elif 8 <= h <= 10:
+    elif 10 <= h <= 10:
         return "High"
     else:
         return None
@@ -125,7 +125,6 @@ kmeans = KMeans(n_clusters=3, random_state=42)
 df["Cluster"] = kmeans.fit_predict(X_scaled)
 
 # Cluster summary
-df["Age_Group_Code"] = df["Age_Group"].cat.codes
 cluster_summary = df.groupby("Cluster")[cluster_features + ["Happiness_Index(1-10)"]].mean()
 cluster_summary["Count"] = df.groupby("Cluster").size()
 print("\nCluster Summary:\n", cluster_summary)
