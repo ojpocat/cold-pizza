@@ -14,15 +14,18 @@ The dataset for this analysis comes from Kaggle as tidy data. [2] Each row repre
 
 We are using several machine learning techniques using variables from the data on our happiness index variable. We have analysis on the happiness variable as numerical and as a binned variable. 
 
-Our first analysis is on happiness index as a numerical variable. The models that we tested were **Linear Regression**, 
+The first part of our analysis is on happiness index as a binned variable. The models that we tested were classification models **Logistic Regression**, **Random Forest**, **SVM**, and **KNN**. 
 
-// We ran all the models on the binned and numerical variable, and then decided based on that which model worked best for each case. 
+The second part of our analysis is on happiness index as a numerical variable. The models that we tested were regression models **Linear Regression**, **Random Forest**, **SVM**, and **KNN**.
+
 
 ## Results
 
 The best model overall is KNN, and the binned models performed better than the numerical models. 
 
 ## Learnings
+
+It's hard to compare a regression and classification variables. Binning the variable made the results more accurate than just the numerical prediction. Because KNN and Random Forest performed the best, feature relationships may seem linear but could not be.
 
 ## Conclusion
 
@@ -33,3 +36,5 @@ We can see the that the most effective models for this data are
 1. Beyari, H. (2023). The Relationship between Social Media and the Increase in Mental Health Problems. International Journal of Environmental Research and Public Health, 20(3), 2383. https://doi.org/10.3390/ijerph20032383
 
 2. Kaggle dataset
+
+3. ChatGPT
