@@ -12,22 +12,23 @@ The dataset for this analysis comes from Kaggle as tidy data. [2] Each row repre
 
 ## Methods
 
-We are using several machine learning techniques using variables from the data on our happiness index variable. We have analysis on the happiness variable as numerical and as a binned variable. 
+We are using several machine learning techniques using variables from the data on our happiness index variable. We have analysis on the happiness variable as numerical and as a binned variable. The first part of our analysis is on happiness index as a binned variable. The models that we tested were classification models **Logistic Regression**, **Random Forest**, **SVM**, and **KNN**. The second part of our analysis is on happiness index as a numerical variable. The models that we tested were regression models **Linear Regression**, **Random Forest**, **SVM**, and **KNN**. Then we categorized our predicted happiness indeces from the regression models into the happiness bins to compute an accuracy and compare with the classification models.
 
-The first part of our analysis is on happiness index as a binned variable. The models that we tested were classification models **Logistic Regression**, **Random Forest**, **SVM**, and **KNN**. The second part of our analysis is on happiness index as a numerical variable. The models that we tested were regression models **Linear Regression**, **Random Forest**, **SVM**, and **KNN**. Then we categorized our predicted happiness indeces from the regression models into the happiness bins to compute an accuracy and compare with the classification models.
+Because we determined the 3 variables, our models determined which variable was the most influential predictor variable. 
 
 
 ## Results
 
-The best model overall is KNN, and the binned models performed better than the numerical models. 
+The best model overall is KNN, and the binned models performed better than the numerical models. The random forest said that stress level was the best predictor.
 
 ## Learnings
 
-It's hard to compare a regression and classification variables. Binning the variable made the results more accurate than just the numerical prediction. Because KNN and Random Forest performed the best, feature relationships may seem linear but could not be.
+It's hard to compare a regression and classification variables. Binning the variable made the results more accurate than just the numerical prediction. Because KNN and Random Forest performed the best, feature relationships may seem linear but could not be. 
 
 ## Conclusion
 
 We can see the that the most effective models for this data are 
+We can determine someone's well-being relatively well, but each model determined different results for the weight of the predictor variables.
 
 ## References
 
