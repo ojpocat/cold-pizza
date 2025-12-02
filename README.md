@@ -20,6 +20,7 @@ Because we determined the 3 variables, our models determined which variable was 
 ## Results
 
 The best model overall is KNN, and the binned models performed better than the numerical models. The random forest said that stress level was the best predictor.
+Overall stress level and sleep quality were the most important factors.
 
 ## Learnings
 
