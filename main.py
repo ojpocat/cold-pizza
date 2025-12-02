@@ -39,11 +39,11 @@ print(df.describe())
 # ============================================================
 
 def categorize_happiness(h):
-    if 4 <= h < 8:
+    if 4 <= h < 6:
         return "Low"
-    elif 8 <= h < 10:
+    elif 6 <= h < 8:
         return "Medium"
-    elif 10 <= h <= 10:
+    elif 8 <= h <= 10:
         return "High"
     else:
         return None

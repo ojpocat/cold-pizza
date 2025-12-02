@@ -289,12 +289,13 @@ print("\n" + "="*60)
 print("HAPPINESS CLASSIFICATION: Low / Medium / High")
 print("="*60)
 
-# Bin happiness into 3 categories: Low (1-4), Medium (5-7), High (8-10)
-df_enhanced['Happiness_Bin'] = pd.cut(
+# Bin happiness into 3 categories (Quantile-based bins)
+df_enhanced['Happiness_Bin'] = pd.qcut(
     df_enhanced['Happiness_Index(1-10)'],
-    bins=[0, 4, 7, 10],
+    q=3,
     labels=['Low', 'Medium', 'High']
 )
+
 
 y_class = df_enhanced['Happiness_Bin']
 
