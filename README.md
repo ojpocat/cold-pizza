@@ -20,6 +20,8 @@ Our first analysis is on happiness index as a numerical variable. The models tha
 
 ## Results
 
+The best model overall is KNN, and the binned models performed better than the numerical models. 
+
 ## Learnings
 
 ## Conclusion
