@@ -24,7 +24,8 @@ While classification models performed better overall, differences within each mo
 
 Overall, stress level was the most important predictor variable based on the results of the feature importance across models. 
 
-![Results Comparing Models](Results_graph.png)
+<table><tr><td><img src="final_plots/model_accuracy_results.png"></td><td><img src="final_plots/mse_results.png"></td></tr></table>
+
 
 ## Learnings
 
