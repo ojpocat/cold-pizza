@@ -6,7 +6,7 @@ Our project focuses on social media usage and how it can affect happiness and me
 
 ## Data
 
-The dataset for this analysis comes from Kaggle as tidy data. [2] Each row represents an individual, and the columns represent their lifestyle and media habits. The variables used in the analysis are _Daily Screen Time_, _Stress Level_, and _Sleep Quality_. We selected these variables for the analysis because our exploratory data analysis showed us that these variables have the highest correlation to our happiness index. We also determined that screen time would be the most significant variable in the analysis. The outcome variable that we are using is _Happiness Index_, a numerical variable dictating the overall happiness of the individual, and representing well-being, based on a self-reported score. We scaled all of the numerical variables in the analysis so that all the factors would contrivute evenly to training the models. We also created a scaled, binned version of _Happiness Index_ which places each score into either Low, Medium, or High.
+The dataset for this analysis comes from Kaggle as tidy data. [4] Each row represents an individual, and the columns represent their lifestyle and media habits. The variables used in the analysis are _Daily Screen Time_, _Stress Level_, and _Sleep Quality_. We selected these variables for the analysis because our exploratory data analysis showed us that these variables have the highest correlation to our happiness index. We also determined that screen time would be the most significant variable in the analysis. The outcome variable that we are using is _Happiness Index_, a numerical variable dictating the overall happiness of the individual, and representing well-being, based on a self-reported score. We scaled all of the numerical variables in the analysis so that all the factors would contrivute evenly to training the models. We also created a scaled, binned version of _Happiness Index_ which places each score into either Low, Medium, or High.
 
 <table><tr><td><img src="plots/positive_correlations.png"></td><td><img src="plots/negative_correlations.png"></td></tr></table>
 
@@ -68,6 +68,8 @@ Finally, this project strengthened our collaborative and communication skills by
 
 1. Beyari, H. (2023). The Relationship between Social Media and the Increase in Mental Health Problems. International Journal of Environmental Research and Public Health, 20(3), 2383. https://doi.org/10.3390/ijerph20032383
 
-2. Rajak, P. (2025, October 15). Mental Health & Social Media Balance Dataset. Kaggle. https://www.kaggle.com/datasets/prince7489/mental-health-and-social-media-balance-dataset/data 
+2. ChatGPT
 
-3. ChatGPT
+3. Statista. (2024, May). Number of social media users worldwide from 2017 to 2028 (in billions) – forecast. Retrieved December 3, 2025, from https://www.statista.com/topics/1164/social-networks/
+
+4. Rajak, P. (2025, October 15). Mental Health & Social Media Balance Dataset. Kaggle. https://www.kaggle.com/datasets/prince7489/mental-health-and-social-media-balance-dataset/data
