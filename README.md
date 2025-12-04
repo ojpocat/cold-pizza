@@ -50,6 +50,8 @@ Overall, stress level was the most important predictor variable based on the res
 
 <table><tr><td><img src="final_plots/model_accuracy_results.png"></td><td><img src="final_plots/mse_results.png"></td></tr></table>
 
+<table><tr><td><img src="final_plots/screen_stress.png"></td><td><img src="final_plots/stress_happy.png"></td></tr></table>
+
 ## Learnings
 
 This project demonstrated that comparing regression and classification models can be challenging, as they optimize different objectives and rely on distinct evaluation metrics. Direct performance comparisons are therefore not always straightforward, particularly when the target variable can reasonably be framed in multiple ways.
@@ -77,8 +79,6 @@ Although our project was able to identify meaningful patterns in the prediction 
 Beyond the modeling results, this project provided a complete experience working through the data science pipeline. We began with a research question, explored and cleaned the data, and observed how methodological decisions such as scaling and binning can shape the entire modeling process. Building both regression and classification models allowed us to see how differently algorithms interpret the same information, and tuning them with grid search demonstrated how much performance can improve with careful optimization. We also learned that real-world data, particularly subjective measures like happiness, is often noisy and unpredictable, making it just as important to understand model limitations as it is to report accuracy.
 
 Finally, this project strengthened our collaborative and communication skills by requiring us to explain our findings through clear visuals and storytelling. In the end, we learned not only how to apply machine learning models, but also how to think critically like data analysts—by asking meaningful questions, exploring patterns, evaluating results thoughtfully, and communicating insights effectively.
-
-<table><tr><td><img src="final_plots/screen_stress.png"></td><td><img src="final_plots/stress_happy.png"></td></tr></table>
 
 ## References
 
