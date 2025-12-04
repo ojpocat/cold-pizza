@@ -8,7 +8,7 @@ Our project focuses on social media usage and how it can affect happiness and me
 
 The dataset for this analysis comes from Kaggle as tidy data. [4] Each row represents an individual, and the columns represent their lifestyle and media habits. The variables used in the analysis are _Daily Screen Time_, _Stress Level_, and _Sleep Quality_. We selected these variables for the analysis because our exploratory data analysis showed us that these variables have the highest correlation to our happiness index. We also determined that screen time would be the most significant variable in the analysis. The outcome variable that we are using is _Happiness Index_, a numerical variable dictating the overall happiness of the individual, and representing well-being, based on a self-reported score. We scaled all of the numerical variables in the analysis so that all the factors would contribute evenly to training the models. We also created a scaled, binned version of _Happiness Index_ which places each score into either Low, Medium, or High.
 
-<table><tr><td><img src="plots/positive_correlations.png"></td><td><img src="plots/negative_correlations.png"></td></tr></table>
+<table><tr><td><img src="final_plots/happiness_groups.png"></td><td><img src="final_plots/variables.png"></td></tr></table>
 
 ### Exploratory Data Analysis
 
@@ -22,7 +22,7 @@ While the decline is not perfectly linear, the pattern suggests that screen time
 
 Although the effect of screen time is weaker than that of stress or sleep quality, it still plays a meaningful role. Screen time appears to act as a behavioral amplifier—intensifying the emotional effects of stress and reducing the benefits of quality sleep. Together, these variables form the foundation for the predictive models and cluster analysis used in later stages of the project.
 
-<table><tr><td><img src="final_plots/happiness_groups.png"></td><td><img src="final_plots/variables.png"></td></tr></table>
+<table><tr><td><img src="plots/positive_correlations.png"></td><td><img src="plots/negative_correlations.png"></td></tr></table>
 
 ## Methods
 
