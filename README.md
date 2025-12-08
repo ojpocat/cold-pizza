@@ -24,6 +24,8 @@ Although the effect of screen time is weaker than that of stress or sleep qualit
 
 <table><tr><td><img src="plots/positive_correlations.png"></td><td><img src="plots/negative_correlations.png"></td></tr></table>
 
+![Happiness vs Variables](final_plots/3vars_happiness.png)
+
 ## Methods
 
 We applied several machine learning techniques to analyze the relationship between social media–related variables and a happiness index using multiple modeling approaches. Our analysis considered happiness both as a categorical and a numerical variable to evaluate how different modeling choices affect predictive performance.
