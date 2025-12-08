@@ -1,15 +1,5 @@
 # Happiness & Social Media Usage Analysis
 
-# Stuff to be added
-
-# Confidence interval explanation
-The shaded band around the regression line represents the model’s confidence interval, showing the range of regression lines that are statistically plausible given our data. This interval reflects uncertainty in the estimated line, not the variability of individual observations.
-
-
-# Investigating non-linearity
-To evaluate whether our predictor variables (screen time, sleep quality, and stress level) relate to happiness in a linear or nonlinear way, we compared linear, quadratic, and cubic regression models. Across all variables, the quadratic model consistently improved model fit compared to the linear model, suggesting that the relationships are not perfectly linear. For screen time and sleep quality, the gains from quadratic models were modest, and cubic models actually performed worse- indicating that while some curvature exists, the underlying relationships remain relatively simple and are not strongly nonlinear. In contrast, stress level showed a clearer nonlinearity: both quadratic and cubic models improved the R² substantially, with the cubic model performing best. This suggests that the effect of stress on happiness may involve threshold or accelerating patterns that a linear model cannot fully capture. Overall, our results show that while linear trends exist, incorporating mild nonlinearity provides a more accurate representation of how these lifestyle factors relate to happiness, especially in the case of stress. These results are consistent with our suspicion that there are aspects of non-linearity in the relationships between our predictor variables and happiness. 
-
-
 ## Introduction
 
 Our project focuses on social media usage and how it can affect happiness and mental health. The rapid growth of social media platforms has significantly transformed the way individuals communicate, share information, and interact with the world. As daily screen time and online engagement continue to rise, concerns have emerged about the potential impact of social media usage on mental health and overall happiness. The increasing use of social media has been identified as contributing to an increase in mental health challenges. [1] Analyzing trends between happiness and social media usage informs healthier platform design and better strategies for safe, balanced use. In this project, we apply machine learning methods to analyze lifestyle and social media–related variables and examine their relationship to a happiness score. Our goal is to build a predictive model that estimates an individual’s happiness and identifies which usage behaviors and factors are most strongly associated with high or low mental well-being.
@@ -29,6 +19,10 @@ The dataset for this analysis comes from Kaggle as tidy data. [4] Each row repre
   </tr>
 </table>
 
+<p align="center">
+  <img src="final_plots/happiness_groups.png" width="500">
+</p>
+
 ### Exploratory Data Analysis
 
 To begin our exploratory data analysis, we examined the overall distribution of the key mental health–related variables in the dataset. We plotted histograms for all numerical features, including happiness, stress, sleep quality, exercise frequency, and daily screen time. These distribution plots helped us quickly identify several patterns across the data. Some variables, such as sleep quality and stress, are fairly balanced, while others, like days without social media, are heavily skewed, indicating that people rarely take breaks from social media platforms. Happiness scores also show noticeable clustering toward the middle and higher ranges of the scale.
@@ -44,6 +38,8 @@ Although the effect of screen time is weaker than that of stress or sleep qualit
 <table><tr><td><img src="plots/positive_correlations.png"></td><td><img src="plots/negative_correlations.png"></td></tr></table>
 
 ![Happiness vs Variables](final_plots/3vars_happiness.png)
+
+The shaded band around the regression line represents the model’s confidence interval, showing the range of regression lines that are statistically plausible given our data. This interval reflects uncertainty in the estimated line, not the variability of individual observations.
 
 ## Methods
 
@@ -71,8 +67,6 @@ Overall, stress level was the most important predictor variable based on the res
 
 <table><tr><td><img src="final_plots/model_accuracy_results.png"></td><td><img src="final_plots/mse_results.png"></td></tr></table>
 
-<table><tr><td><img src="final_plots/screen_stress.png"></td><td><img src="final_plots/stress_happy.png"></td></tr></table>
-
 ## Learnings
 
 This project demonstrated that comparing regression and classification models can be challenging, as they optimize different objectives and rely on distinct evaluation metrics. Direct performance comparisons are therefore not always straightforward, particularly when the target variable can reasonably be framed in multiple ways.
@@ -87,9 +81,25 @@ The goal of this project was to use machine learning methods to examine how life
 
 Our results show that no single model was optimal for all objectives. KNN performed best when predicting well-being categories, while Random Forest produced stronger results for numerical prediction tasks. This supports our broader goal of understanding model effectiveness, where the choice of algorithm should be guided by the specific prediction goal rather than overall performance alone. Additionally, differences in feature importance across models highlight that no single behavior can be declared the most important factor for mental health.
 
-In our analysis, the variables stress level, sleep quality, and daily screen time were the most significant predictors of mental well-being, aligning with the project’s aim of identifying behaviors most indicative of mental health. However, the varying importance of these features across models indicates that mental well-being is shaped by nonlinear, interacting lifestyle factors, not isolated habits.
+In our analysis, the variables stress level, sleep quality, and daily screen time were the most significant predictors of mental well-being, aligning with the project’s aim of identifying behaviors most indicative of mental health. However, the varying importance of these features across models indicates that mental well-being is shaped by nonlinear, interacting lifestyle factors, not isolated habits. So, to evaluate whether our predictor variables (screen time, sleep quality, and stress level) relate to happiness in a linear or nonlinear way, we compared linear, quadratic, and cubic regression models. Across all variables, the quadratic model consistently improved model fit compared to the linear model, suggesting that the relationships are not perfectly linear. For screen time and sleep quality, the gains from quadratic models were modest, and cubic models actually performed worse- indicating that while some curvature exists, the underlying relationships remain relatively simple and are not strongly nonlinear. In contrast, stress level showed a clearer nonlinearity: both quadratic and cubic models improved the R² substantially, with the cubic model performing best. This suggests that the effect of stress on happiness may involve threshold or accelerating patterns that a linear model cannot fully capture. Overall, our results show that while linear trends exist, incorporating mild nonlinearity provides a more accurate representation of how these lifestyle factors relate to happiness, especially in the case of stress. These results are consistent with our suspicion that there are aspects of non-linearity in the relationships between our predictor variables and happiness. 
 
-To better understand these interactions, we wanted to dig deeper into the relationships between the most important variables we found, specifically stress level and screen time, and how they connect to happiness. We examined the trend between stress level and happiness (graph below) and observed a strong negative correlation, where increases in stress consistently corresponded to decreases in happiness. This supports what our models showed, that stress is the strongest and most consistent predictor across nearly all analyses. We also analyzed stress level versus screen time and found a surprisingly strong correlation of 0.74, indicating that increases in screen time often accompany higher stress levels. This relationship helps explain why screen time appeared to be a weaker direct predictor in our models, as its effects on happiness may be mediated through stress. In other words, screen time may not independently reduce happiness, but it is closely connected to stress, which has a strong impact on mental well-being. These plots demonstrate that variables do not act independently and that mental health patterns are more interconnected than they initially appear. This also suggests that our results were not as misaligned with our original hypothesis as they may have seemed, since stress and screen time together play an important role in shaping mental health outcomes.
+<table>
+  <tr>
+    <td>
+      <img src="final_plots/screen_happy_fit.png" width="333">
+    </td>
+    <td>
+      <img src="final_plots/sleep_happiness_fit.png" width="333">
+    </td>
+    <td>
+      <img src="final_plots/stress_happiness_fit.png" width="333">
+    </td>
+  </tr>
+</table>
+
+To better understand these interactions, we wanted to dig deeper into the relationships between the most important variables we found, specifically stress level and screen time, and how they connect to happiness. We examined the trend between stress level and happiness and observed a strong negative correlation, where increases in stress consistently corresponded to decreases in happiness. This supports what our models showed, that stress is the strongest and most consistent predictor across nearly all analyses. We also analyzed stress level versus screen time and found a surprisingly strong correlation of 0.74, indicating that increases in screen time often accompany higher stress levels. This relationship helps explain why screen time appeared to be a weaker direct predictor in our models, as its effects on happiness may be mediated through stress. In other words, screen time may not independently reduce happiness, but it is closely connected to stress, which has a strong impact on mental well-being. These plots demonstrate that variables do not act independently and that mental health patterns are more interconnected than they initially appear. This also suggests that our results were not as misaligned with our original hypothesis as they may have seemed, since stress and screen time together play an important role in shaping mental health outcomes.
+
+<table><tr><td><img src="final_plots/screen_stress.png"></td><td><img src="final_plots/stress_happy.png"></td></tr></table>
 
 One of the most important findings from our analysis is that mental health is highly subjective, even when objective lifestyle factors remain the same. This can be seen clearly through real examples pulled directly from the dataset. For example, Users 445 and 011 have identical scores—stress level 7, sleep quality 7, and 5 hours of daily screen time—yet one reports low happiness and the other reports high happiness. The same objective conditions produce completely different subjective experiences. We see this again with Users 001 and 011, who both report stress level 6, sleep quality 7, and 3 hours of screen time, but one reports high happiness while the other reports low. This pattern continues with Users 022 and 392, who also share identical lifestyle metrics yet opposite happiness outcomes. These examples reinforce that behavioral and lifestyle variables help predict happiness, but they do not fully determine it. Individual perception, personal experiences, coping mechanisms, and internal mental health factors play a major role. As a result, our models can identify overall trends and clusters, but individual happiness remains nuanced and cannot be reduced to any single metric such as screen time alone.
 
