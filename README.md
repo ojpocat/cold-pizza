@@ -1,5 +1,15 @@
 # Happiness & Social Media Usage Analysis
 
+# Stuff to be added
+
+# Confidence interval explanation
+The shaded band around the regression line represents the model’s confidence interval, showing the range of regression lines that are statistically plausible given our data. This interval reflects uncertainty in the estimated line, not the variability of individual observations.
+
+
+# Investigating non-linearity
+To evaluate whether our predictor variables (screen time, sleep quality, and stress level) relate to happiness in a linear or nonlinear way, we compared linear, quadratic, and cubic regression models. Across all variables, the quadratic model consistently improved model fit compared to the linear model, suggesting that the relationships are not perfectly linear. For screen time and sleep quality, the gains from quadratic models were modest, and cubic models actually performed worse- indicating that while some curvature exists, the underlying relationships remain relatively simple and are not strongly nonlinear. In contrast, stress level showed a clearer nonlinearity: both quadratic and cubic models improved the R² substantially, with the cubic model performing best. This suggests that the effect of stress on happiness may involve threshold or accelerating patterns that a linear model cannot fully capture. Overall, our results show that while linear trends exist, incorporating mild nonlinearity provides a more accurate representation of how these lifestyle factors relate to happiness, especially in the case of stress. These results are consistent with our suspicion that there are aspects of non-linearity in the relationships between our predictor variables and happiness. 
+
+
 ## Introduction
 
 Our project focuses on social media usage and how it can affect happiness and mental health. The rapid growth of social media platforms has significantly transformed the way individuals communicate, share information, and interact with the world. As daily screen time and online engagement continue to rise, concerns have emerged about the potential impact of social media usage on mental health and overall happiness. The increasing use of social media has been identified as contributing to an increase in mental health challenges. [1] Analyzing trends between happiness and social media usage informs healthier platform design and better strategies for safe, balanced use. In this project, we apply machine learning methods to analyze lifestyle and social media–related variables and examine their relationship to a happiness score. Our goal is to build a predictive model that estimates an individual’s happiness and identifies which usage behaviors and factors are most strongly associated with high or low mental well-being.
