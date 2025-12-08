@@ -75,6 +75,8 @@ The strong performance of KNN and Random Forest models suggests that the underly
 
 Additionally, this project highlighted the inherent difficulty of predicting subjective outcomes such as well-being or happiness.
 
+Our, model performed better than a weighted random guess, because the accuracy would be 0.33934, and our models performed between 0.5 and 0.7 accuracy.
+
 ## Conclusion
 
 The goal of this project was to use machine learning methods to examine how lifestyle factors related to social media usage are associated with mental well-being, and to evaluate how effectively these factors can be used to predict a happiness index indicating mental well-being. Through this analysis, we found that prediction accuracy was strongly influenced by how the target variable was defined. Binning the happiness score into categories resulted in more reliable predictions than modeling it as a continuous numerical value, suggesting that mental well-being may be better captured at a categorical level rather than as an exact score.
