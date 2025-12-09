@@ -31,15 +31,17 @@ Next, we examined the correlation matrix to better understand how these variable
 
 Overall, these visualizations give a high-level picture of the behavioral patterns and emotional responses represented in the data. To explore one of these relationships more closely, we next examined the connection between daily screen time and happiness. We standardized the happiness index so that differences could be measured on the same scale and plotted screen time against standardized happiness values. This visualization revealed a clear downward trend, indicating that higher amounts of daily screen usage are generally associated with lower happiness scores. The regression line further reinforces this negative relationship.
 
-While the decline is not perfectly linear, the pattern suggests that screen time functions as a meaningful predictor of happiness, particularly when considered alongside other behavioral and lifestyle variables. This relationship becomes even more pronounced when incorporating stress and sleep quality into the analysis. The correlation results highlight three key drivers of happiness: sleep quality, which is one of the strongest positive predictors; stress level, which is one of the strongest negative predictors; and daily screen time, which consistently shows a negative relationship with happiness.
+To explore these relationships more closely, we plotted the three variables most strongly correlated with happiness- sleep quality, stress level, and daily screen time- against a standardized version of the happiness index. Standardizing happiness allowed us to compare all variables on a common scale, and for each scatter plot, we added a regression line to visualize the general direction of the relationship.
 
-Although the effect of screen time is weaker than that of stress or sleep quality, it still plays a meaningful role. Screen time appears to act as a behavioral amplifier—intensifying the emotional effects of stress and reducing the benefits of quality sleep. Together, these variables form the foundation for the predictive models and cluster analysis used in later stages of the project.
+Across all three plots, the patterns were consistent with our correlation results. Sleep quality showed a clear positive trend with higher standardized happiness scores, while both stress level and screen time displayed negative trends. Although the strength of these relationships varies- stress as the strongest negative predictor and screen time as a weaker but still meaningful one- each variable contributes to understanding how behavioral and lifestyle factors shape overall happiness. These visual patterns provided the foundation for the predictive modeling and clustering steps that followed.
+
 
 <table><tr><td><img src="plots/positive_correlations.png"></td><td><img src="plots/negative_correlations.png"></td></tr></table>
 
 ![Happiness vs Variables](final_plots/3vars_happiness.png)
 
-The shaded band around the regression line represents the model’s confidence interval, showing the range of regression lines that are statistically plausible given our data. This interval reflects uncertainty in the estimated line, not the variability of individual observations.
+*The shaded band around the regression line represents the model’s confidence interval, showing the range of regression lines that are statistically plausible given our data. This interval reflects uncertainty in the estimated line, not the variability of individual observations.*
+
 
 ## Methods
 
