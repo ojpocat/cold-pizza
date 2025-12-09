@@ -65,9 +65,13 @@ Looking at mean squared error, we see the same pattern. The regression models sh
 
 While classification models performed better overall, differences within each model type were relatively small. For example, among classification models, KNN and Random Forest achieved similar performance, and a similar pattern was observed among regression models. This indicates that model choice within the same modeling type was less impactful than the decision between classification and regression itself.
 
+<table><tr><td><img src="final_plots/model_accuracy_results.png"></td><td><img src="final_plots/mse_results.png"></td></tr></table>
+
 Next, we averaged feature importance across all the models where importance was available. The biggest contributor was stress level, which made up about 32 percent of total importance on average. That aligns with the strong negative correlation we saw earlier. Sleep quality was the second-most important, around 17 percent. And interestingly, screen time the variable that we originally predicted to be the most impactful on classification within the models, was only around 4 percent on average. One key finding here is that different models ranked features differently and relied on patterns in certain features more than others.
 
-<table><tr><td><img src="final_plots/model_accuracy_results.png"></td><td><img src="final_plots/mse_results.png"></td></tr></table>
+<p align="center">
+  <img src="final_plots/feature_importance.png" width="500">
+</p>
 
 ## Learnings
 
