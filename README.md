@@ -77,7 +77,7 @@ The strong performance of KNN and Random Forest models suggests that the underly
 
 Additionally, this project highlighted the inherent difficulty of predicting subjective outcomes such as well-being or happiness.
 
-Overall, our models performed better than random guessing, as the accuracy would be 0.33934 and mean squared error would be 0.8734, and our models performed between 0.5 and 0.7 accuracy and 
+Overall, our models performed better than random guessing, which would be an accuracy of 0.33934 and a mean squared error of 0.8734. Our models performed with an accuracy between 0.5 and 0.7 and a MSE between 0.4 and 0.3, much better than random guessing. 
 
 ## Conclusion
 
